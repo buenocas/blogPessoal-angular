@@ -67,7 +67,7 @@
 
 
 
-            <div class="card mb-4" *ngFor="let postagem of listaPostagem">
+            <div class="card mb-4" *ngFor="let postagem of listaPostagem | orderBy : key : reverse">
 
                 <div class="card-header">
 

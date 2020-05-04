@@ -9,9 +9,14 @@ import { Postagem } from '../model/Postagem';
 })
 export class FeedComponent implements OnInit {
 
-  listaPostagem : Postagem []
+
+  key = 'data'
+  reverse = true
+
+  listaPostagem: Postagem[]
 
   postagem: Postagem = new Postagem
+
 
   constructor(private postagemService: PostagemService) { }
 
@@ -22,18 +27,18 @@ export class FeedComponent implements OnInit {
   }
 
 
-  findAllPostagens(){
+  findAllPostagens() {
 
-    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) =>{
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
 
       this.listaPostagem = resp
-      
+
     })
 
   }
 
-  publicar(){
-    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
+  publicar() {
+    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
 
       this.postagem = resp
       location.assign('/feed')
