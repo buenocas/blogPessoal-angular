@@ -57,14 +57,34 @@
                     <button type="button" class="btn btn-outline-info w-25">Publicar</button>
                 </div>
             </div>
-    
+
             <hr class="mt-5 mb-5">
 
             <h3 class="text-center text-monospace">Minhas Postagens</h3>
 
+
+
+
+            <div class="card mb-4" *ngFor="let postagem of listaPostagem">
+
+                <div class="card-header">
+
+                    <h5 class="card-tittle">{{ postagem.titulo}}</h5>
+                </div>
+
+
+                <div class="card-body">
+                    <p class="card-text"> {{postagem.texto}} </p>
+
+                    <small class="form-text m-0 text-muted mb-3 text-monospace"> Postado em
+                        {{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}
+
+                    </small>
+
+                </div>
+            </div>
+
         </div>
-
-
 
     </div>
 </div>
